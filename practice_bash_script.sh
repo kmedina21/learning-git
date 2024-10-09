@@ -7,10 +7,9 @@
 # ctmedina2@dons.usfca.edu
 # October 9, 2024
 
-echo "Processing the first file: " $1
-
-wc $1
-
-echo "Processing the second file: " $2
-
-wc $2
+for file in $@
+do
+	echo Processing $file now
+	echo Processing $file... >> logfile.txt
+	wc $file >> logfile.txt
+done
